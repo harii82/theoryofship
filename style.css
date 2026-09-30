@@ -1,0 +1,92 @@
+:root {
+  --ink: #000;
+  --grey: #7A7A7A;
+  --gutter: 16px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: #fff;
+  color: var(--ink);
+  font-family: "Helvetica Neue", Helvetica, Arial, "Liberation Sans", sans-serif;
+  font-size: 17px;
+  line-height: 1.28;
+  letter-spacing: -0.011em;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: inherit; text-decoration: none; }
+a:hover { color: var(--grey); }
+a:focus-visible { outline: 1px solid var(--ink); outline-offset: 2px; }
+
+/* ---------- Masthead ---------- */
+.bar {
+  display: flex; align-items: center; gap: 0.28em;
+  padding: 18px var(--gutter) 20px;
+  border-bottom: 1px solid var(--ink);
+  font-size: clamp(34px, 7.4vw, 72px);
+  font-weight: 700;
+  line-height: 1.02;
+  letter-spacing: -0.035em;
+}
+.bar a { display: flex; align-items: center; gap: 0.28em; }
+.mark { width: 0.52em; height: 0.52em; flex: none; }
+.mark circle, .mark line { stroke: var(--ink); stroke-width: 2.2; fill: none; }
+
+/* ---------- Headline ---------- */
+h1 {
+  font-size: clamp(23px, 3.5vw, 40px);
+  font-weight: 400;
+  line-height: 1.14;
+  letter-spacing: -0.022em;
+  padding: 26px var(--gutter) 0;
+}
+.sub {
+  padding: 12px var(--gutter) 30px;
+  max-width: 46ch;
+  color: var(--grey);
+}
+
+/* ---------- Fact rows ---------- */
+.fact {
+  border-top: 1px solid var(--ink);
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  gap: 16px;
+  padding: 13px var(--gutter) 15px;
+  align-items: baseline;
+}
+.fact dt { color: var(--grey); font-size: 15px; }
+.fact dd {
+  font-size: clamp(20px, 2.7vw, 31px);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+.fact dd.small { font-size: 17px; line-height: 1.4; letter-spacing: -0.011em; max-width: 52ch; }
+.fact a { border-bottom: 1px solid var(--ink); }
+.fact a:hover { border-color: var(--grey); }
+
+/* ---------- Page link ---------- */
+.jump {
+  border-top: 1px solid var(--ink);
+  padding: 13px var(--gutter) 15px;
+}
+.jump a {
+  font-size: clamp(20px, 2.7vw, 31px);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+.end {
+  border-top: 1px solid var(--ink);
+  padding: 9px var(--gutter) 40px;
+  font-size: 15px;
+  color: var(--grey);
+}
+
+@media (max-width: 700px) {
+  body { font-size: 16px; }
+  .fact { grid-template-columns: 1fr; gap: 0; }
+  .fact dt { margin-bottom: 4px; }
+}
